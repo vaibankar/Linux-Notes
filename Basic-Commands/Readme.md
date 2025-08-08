@@ -76,7 +76,7 @@ hostname OR hostname -s
 ```
 ---
 
-###COMMAND TO VIEW SYSTEM INFORMATION
+###**COMMAND TO VIEW SYSTEM INFORMATION**
 
 
 
