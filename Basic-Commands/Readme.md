@@ -2,3 +2,7 @@
 ```
 tty
 ```
+## 2:Display current logged in all users with their details.
+```
+who
+```
