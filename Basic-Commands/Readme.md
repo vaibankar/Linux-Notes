@@ -36,7 +36,7 @@ cal -3
 ```
 cal -j <year>
 ```
-## 10.t shows current date and time.
+## 10.It shows current date and time.
 ```
 date
 ```
