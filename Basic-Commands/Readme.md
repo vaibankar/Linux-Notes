@@ -1,3 +1,5 @@
+# BASIC COMMANDS
+
 ## 1:This command displays current user terminal number.
 ```
 tty
@@ -76,7 +78,81 @@ hostname OR hostname -s
 ```
 ---
 
-### COMMAND TO VIEW SYSTEM INFORMATION
+# COMMAND TO VIEW SYSTEM INFORMATION
+
+## 1.Show detailed information about system.
+```
+hostnamectl
+```
+## 2.It displays operating system kernel name.
+```
+uname -a
+```
+## 3.It display all information regarding system.
+```
+uname -r
+```
+## 4.It display RAM information in human readable form.
+```
+free -h
+```
+## 5.It lists all available USB devices.
+```
+lsusb
+```
+## 6.It list processor information.
+```
+lscpu
+```
+## 7.It display all hardware information.(root)
+```
+dmidecode
+```
+---
+# GETTING HELP FROM COMMANDS
+
+## 1.Show manual of mentioned command.
+```
+man <command>
+```
+## 2.Same as that of man command.
+```
+info <command>
+```
+## 3.Display one line description of manual page. (#mandb command should use to update database manuals.)
+```
+whatis <command>
+```
+## 4.Show short description of manual page. –help is option thus, some command may not support this option.
+```
+<command> --help
+```
+## 5.To know path of command file.
+```
+which <command>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
