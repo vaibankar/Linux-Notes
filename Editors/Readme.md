@@ -11,11 +11,18 @@
 - Command line editor uses command line interface. These editors are much master and consumes less memory than any graphical editors. Following are some well-known command line editors.
 
 1. nano: - nano editor is easy to use since it provides simple features to edit data from files.
-      - Syntax:
       ```
       nano <filename>.<extension>
       ```
 2. vi and vim: - vi (virtual interface) and vim (virtual interface modified) are most commonly used editors. vi and vim both editors are same where as vim is the                    advance version of vi editor. Thus, it contains some additional features. These editors works in four different modes.
+   - Insert mode
+   - Ex-mode
+   - Command mode
+   - Visual mode
+   ```
+   vim <filename>
+   ```
+   
 
 
 
