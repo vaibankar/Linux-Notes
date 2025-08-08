@@ -7,6 +7,15 @@
 2. kedit: - It is similar to gedit but contain some advance features. Generally, we have to install kedit separately to use it.
 3. Open office: - Open Office is same as that of MS Office. This Open Office is specially developed for Linux based operating systems.
 
+# Command line editor:
+- Command line editor uses command line interface. These editors are much master and consumes less memory than any graphical editors. Following are some well-known command line editors.
+
+1. nano: - nano editor is easy to use since it provides simple features to edit data from files.
+      - Syntax:
+      ```
+      nano <filename>.<extension>
+      ```
+2. vi and vim: - vi (virtual interface) and vim (virtual interface modified) are most commonly used editors. vi and vim both editors are same where as vim is the                    advance version of vi editor. Thus, it contains some additional features. These editors works in four different modes.
 
 
 
