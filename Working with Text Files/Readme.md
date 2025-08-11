@@ -117,7 +117,7 @@ mkdir <option> <path/directory_name>
 ```
 ---
 ## MOVE AND RENAME: - Move and rename both operation can be performed using ‘mv’ command. It moves files and directories from one location to another. It is possible to move and rename at the same time.
--Syntax
+- Syntax
 ```
 mv <option> <source> <destination>
 ```
@@ -138,6 +138,9 @@ mv <option> <source> <destination>
 ```
 [root@server0 /]# mv /root/anaconda-ks.cfg ~/Desktop/kickstart.txt
 ```
+---
+## REMOVE: - ‘rmdir’ command is use to remove empty directory where as ‘rm’ command is used to remove files. Directories also can be removed using ‘rm’ command. (Note: Removing files using rm or rmdir command will delete files permanently and doesn’t move in recyclebin or any other place.)
+- #rmdir – rmdir command only deletes empty directories.
 
 
 
