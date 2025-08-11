@@ -51,10 +51,35 @@ mkdir <option> <path/directory_name>
 # File Operations:-
 ## READ:- Read operation can be performed to view content of the file. There are five commands which we can use for read operation.
 - cat:- cat command is used to get data of file as output on the terminal. Reading out large file leads to navigate in terminal, which require separate scrolling      device (mouse). So, cat command is very useful in reading smaller files with few lines of data in command line.
- Example,
 
-
-
+- Example:-
+```
+[root@server0 /]# cat /root/anaconda-ks.cfg
+```
+- more – more command provides line by line navigation and page by page navigation in downward direction but, upward scrolling not possible.
+- Example:-
+```
+[root@server0 /]# more /root/anaconda-ks.cfg
+```
+- less – less command allow navigation keys for scrolling up and down. Thus, it is more useful command than any other four command.
+- Example:-
+```
+[root@server0 /]# less /root/anaconda-ks.cfg
+```
+- head – head command show few lines from top of the file. If head command is used without any option, it will show top ten lines by default. –n is used to give             count of lines to be shown.
+- Example:-
+```
+[root@server0 /]# head /root/anaconda-ks.cfg
+[root@server0 /]# head –n 5 /root/anaconda-ks.cfg
+```
+- tail – tail command show few lines from bottom of file. If tail command is used without any option, it will show bottom ten lines by default. –n is used to give            count of lines to be shown.
+- Example:-
+```
+[root@server0 /]# tail /root/anaconda-ks.cfg
+[root@server0 /]# tail –n 4 /root/anaconda-ks.cfg
+```
+---
+# 
 
 
 
