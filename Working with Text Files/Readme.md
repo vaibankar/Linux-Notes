@@ -93,7 +93,7 @@ mkdir <option> <path/directory_name>
  ```
  cp <option> <source> <destination>
 ```
--Options:
+- Options:
   - -f : forcefully
   - -v : Verbose/View
   - -r : recursive (to copy directory)
