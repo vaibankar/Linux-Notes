@@ -212,6 +212,49 @@ Lotus, rose, tulip, lily.                      -> Press [ctrl+d] to save file
 [root@server0 ~]# cat /root/Desktop/flower.txt
 Lotus, rose, tulip, lily.
 ```
+- Overwrite content of existing file.
+```
+[root@server0 ~]# cat > /root/Desktop/flower.txt
+Hello World!
+[root@server0 ~]# cat /root/Desktop/flower.txt
+Hello World!
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
