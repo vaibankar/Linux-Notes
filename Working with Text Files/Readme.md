@@ -141,7 +141,16 @@ mv <option> <source> <destination>
 ---
 ## REMOVE: - ‘rmdir’ command is use to remove empty directory where as ‘rm’ command is used to remove files. Directories also can be removed using ‘rm’ command. (Note: Removing files using rm or rmdir command will delete files permanently and doesn’t move in recyclebin or any other place.)
 - #rmdir – rmdir command only deletes empty directories.
-
+- Syntax
+```
+#rmdir <empty_dir_name>
+```
+- Examples:-
+- Trying to remove non-empty directory using rmdir. It gives error.
+```
+[root@server0 ~]# rmdir /Demo
+rmdir: failed to remove ‘/Demo’: Directory not empty
+```
 
 
 
