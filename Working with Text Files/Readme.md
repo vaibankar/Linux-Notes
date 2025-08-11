@@ -99,8 +99,15 @@ mkdir <option> <path/directory_name>
   - -r : recursive (to copy directory)
   - -a : preserver permissions when copying
 
-
-
+- Example:-
+- Copy one file content to another file
+```
+[root@server0 /]# cp /root/anaconda-ks.cfg ~/Desktop/kickstart.txt
+```
+- Copy file from one location to another
+```
+[root@server0 /]# cp /root/anaconda-ks.cfg /mnt/    ->copy single file
+```
 
 
 
