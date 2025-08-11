@@ -23,7 +23,7 @@
      <img width="871" height="290" alt="image" src="https://github.com/user-attachments/assets/47d801ca-04ab-455b-a2e0-ecabd6c4837f" />
 
 ## Command Mode:- This is default mode. Press esc to exit from any mode and enter into command mode.
-1. Delete current line = dd
+1. Delete current line = 'dd'
 2. Delete n no. of lines from current line = <n>dd
 3. Delete current word = dw
 4. Delete n no. of words from current word = <n>dw
