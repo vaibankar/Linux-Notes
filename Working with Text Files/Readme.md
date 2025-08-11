@@ -179,7 +179,11 @@ removed ‘/Demo/file1.txt’
 ```
 [root@server0 ~]# rm –r /Demo
 ```
-
+---
+# Redirectors:
+- Redirectors are used to write terminal output into file. Output, generated from any command, on terminal can be transferred into existing file. If file does not exist, automatically new file will be created. Following are some redirectors.
+### Single Redirector (>): Single redirector replace existing data in the file with newly redirected data. It overwrites the contents of existing file.
+### Double Redirector (>>): Double redirector keeps existing data and newly redirected data will be added at the end of the file. It appends redirected data in existing file.
 
 
 
