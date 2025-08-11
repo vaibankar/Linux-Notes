@@ -27,11 +27,30 @@ Syntax:
 [root@server0 /]# touch /root/file{1..100}.txt
 ```
 ---
-
-
-
-
-
+## #mkdir :- mkdir command creates directories. Creating multiple directories are also possible using mkdir command
+Syntax: 
+```
+mkdir <option> <path/directory_name>
+```
+## Example:-
+1.Creating directory in / directory
+```
+[root@server0 /]# mkdir /dir1
+```
+2.Creating multiple directories
+```
+[root@server0 /]# mkdir /dir1 /root/Desktop/dir2 /etc/demo
+[root@server0 /]# mkdir /root/{demo,data,practice}
+[root@server0 /]# mkdir /practical{1..10}
+```
+3.Creating parent directory if it is not exist
+```
+[root@server0 /]# mkdir –p /demo/data/practice
+```
+---
+# File Operations:-
+## READ:- Read operation can be performed to view content of the file. There are five commands which we can use for read operation.
+- cat:- cat command is used to get data of file as output on the terminal. Reading out large file leads to navigate in terminal, which require separate scrolling device (mouse). So, cat command is very useful in reading smaller files with few lines of data in command line. Example,
 
 
 
