@@ -19,9 +19,8 @@
    - Ex-mode
    - Command mode
    - Visual mode
-   ```
-   vim <filename>
-   ```
+
+     https://ibb.co/m5CTFhqB
    
 
 
