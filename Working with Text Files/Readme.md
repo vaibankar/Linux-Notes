@@ -106,7 +106,13 @@ mkdir <option> <path/directory_name>
 ```
 - Copy file from one location to another
 ```
-[root@server0 /]# cp /root/anaconda-ks.cfg /mnt/    ->copy single file
+[root@server0 /]# cp /root/anaconda-ks.cfg /mnt/              ->copy single file
+```
+- Copy directory and multiple files
+```
+[root@server0 /]# cp -r /etc /root                            ->copy directory etc
+[root@server0 /]# cp –r /root/* /media                        ->copy all files from root
+ [root@server0 /]# cp –rv /abc.txt /xyz.mp3 /media            ->copy multiple files
 ```
 
 
