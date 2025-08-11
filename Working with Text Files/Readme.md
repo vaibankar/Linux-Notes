@@ -151,11 +151,34 @@ mv <option> <source> <destination>
 [root@server0 ~]# rmdir /Demo
 rmdir: failed to remove ‘/Demo’: Directory not empty
 ```
-
-
-
-
-
+- Removing empty directory using rmdir
+```
+[root@server0 ~]# rmdir /Demo/data
+```
+## rm – rm command is use to delete files and directories. 
+- Syntax
+```
+#rm <option> <file_names>
+```
+- Examples:-
+- Removing files
+```
+[root@server0 ~]# rm /Demo/file10.txt
+rm: remove regular file ‘/Demo/file10.txt’? y
+```
+- Remove files without interaction, (-f : forcefully, -v : verbosely)
+```
+[root@server0 ~]# rm -vf /Demo/file1.txt
+removed ‘/Demo/file1.txt’
+```
+- Remove all files
+```
+[root@server0 ~]# rm –f /Demo/*
+```
+- Remove directories, (-r : recursive)
+```
+[root@server0 ~]# rm –r /Demo
+```
 
 
 
