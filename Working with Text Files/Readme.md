@@ -83,8 +83,19 @@ mkdir <option> <path/directory_name>
 - Options:
      - -r to show output in reverse order
      - -k <n> to show output of arranged by sorting nth column.
-
-
+-Example:-
+```
+[root@server0 /]# sort file1.txt
+[root@server0 /]# sort –r file1.txt
+```
+## COPY: - Copy operation use to copy files and directories in Linux, from one location to another. It will copy contents of one file to another. If destination file is not exist in given location then automatically new file will be generated.
+- Syntax:
+   - cp <option> <source> <destination>
+-Options:
+  - -f : forcefully
+  - -v : Verbose/View
+  - -r : recursive (to copy directory)
+  - -a : preserver permissions when copying
 
 
 
