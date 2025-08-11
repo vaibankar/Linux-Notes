@@ -88,6 +88,7 @@ mkdir <option> <path/directory_name>
 [root@server0 /]# sort file1.txt
 [root@server0 /]# sort –r file1.txt
 ```
+---
 ## COPY: - Copy operation use to copy files and directories in Linux, from one location to another. It will copy contents of one file to another. If destination file is not exist in given location then automatically new file will be generated.
 - Syntax:
  ```
@@ -114,6 +115,43 @@ mkdir <option> <path/directory_name>
 [root@server0 /]# cp –r /root/* /media                        ->copy all files from root
  [root@server0 /]# cp –rv /abc.txt /xyz.mp3 /media            ->copy multiple files
 ```
+---
+## MOVE AND RENAME: - Move and rename both operation can be performed using ‘mv’ command. It moves files and directories from one location to another. It is possible to move and rename at the same time.
+-Syntax
+```
+mv <option> <source> <destination>
+```
+- Example:-
+- Move files/directories from one location to another
+```
+[root@server0 /]# mv /root/anaconda-ks.cfg /mnt/             ->move single file
+[root@server0 /]# mv /media ~/Desktop/                       ->move directory
+[root@server0 /]# mv /root/* /mnt/                           ->move all files
+```
+- Rename file or directory
+```
+[root@server0 /]# mv fower flower.txt                        ->rename file
+[root@server0 /]# mv /root/anaconda-ks.cfg /root/kickstart.cfg
+[root@server0 /]# mv /opt /demo                              -> rename directory
+```
+- Move and rename together
+```
+[root@server0 /]# mv /root/anaconda-ks.cfg ~/Desktop/kickstart.txt
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
