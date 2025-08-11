@@ -79,7 +79,11 @@ mkdir <option> <path/directory_name>
 [root@server0 /]# tail –n 4 /root/anaconda-ks.cfg
 ```
 ---
-# 
+## SORT: - Sort command will display result in ascending or descending order. Without option, data will be shown in ascending order.
+
+  Options,
+-r to show output in reverse order
+-k <n> to show output of arranged by sorting nth column.
 
 
 
