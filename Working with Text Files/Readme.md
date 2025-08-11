@@ -219,13 +219,43 @@ Hello World!
 [root@server0 ~]# cat /root/Desktop/flower.txt
 Hello World!
 ```
-
-
-
-
-
-
-
+- Add content in existing file, (Append)
+```
+[root@server0 ~]# cat >> /root/Desktop/flower.txt I am Shubham
+[root@server0 ~]# cat /root/Desktop/flower.txt
+Hello World!
+I am Shubham
+```
+- View content of files
+```
+[root@server0 ~]# cat /etc/redhat-release                              -> display OS name and Version
+[root@server0 ~]# cat /proc/meminfo                                    -> display ram information
+[root@server0 ~]# cat /proc/cpuinfo                                    -> display processor information
+```
+- Copy content of one file to another file
+```
+[root@server0 ~]# cat /etc/redhat-release > /osname.txt
+```
+- Append content of one file to another file
+```
+[root@server0 ~]# cat /proc/meminfo >> /osname.txt
+```
+- File content merging
+```
+[root@server0 ~]# cat /flower.txt /number.txt /alpha.txt > /newfile.txt
+```
+---
+# Execute Multiple Commands-
+## Semicolon (;) – Executes two or more commands in same command line argument.
+- Example:-
+```
+[root@server0 ~]# touch /abc.txt ; mkdir /mydir ; cp –r /mnt /media
+```
+## Pipe (|) – It matches first command output to the second command and execute it.
+- Example:-
+```
+[root@server0 ~]# dmidecode | less [root@server0 ~]# ls / | wc
+```
 
 
 
