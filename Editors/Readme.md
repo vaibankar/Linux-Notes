@@ -50,7 +50,7 @@
 25. Show next search result = n
 26. Show previous search result = N
 ---
-## Insert Mode:- Following are commands to enter in insert mode
+## Insert Mode:- Following are commands to enter in insert mode.
 1. insert text at current cursor position = i
 2. insert text at start of the current line = I
 3. insert text just right of the current character = a
@@ -60,7 +60,7 @@
 7. it replaces single character = r
 8. replace multiple characters = R
 ---
-## Ex-mode:- special executing mode
+## Ex-mode:- Special executing mode.
 1. quit without saving = :q
 2. quit without saving forcefully = :q!
 3. save and stay in file = :w
@@ -74,7 +74,7 @@
 11. Find and replace old word with new word = :%s/<old>/<new>/g
 12. Execute any command on terminal without leaving editor = :!<command>
 ---
-## Visual Mode:- this mode is used for selection.
+## Visual Mode:- This mode is used for selection.
 1. Select character by character = v
 2. Select line by line = V
 3. Select block = ctrl+v
