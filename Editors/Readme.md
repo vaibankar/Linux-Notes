@@ -20,7 +20,8 @@
    - Command mode
    - Visual mode
 
-     https://ibb.co/m5CTFhqB
+     <img width="871" height="290" alt="image" src="https://github.com/user-attachments/assets/47d801ca-04ab-455b-a2e0-ecabd6c4837f" />
+
    
 
 
