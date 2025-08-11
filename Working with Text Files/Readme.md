@@ -184,9 +184,34 @@ removed ‘/Demo/file1.txt’
 - Redirectors are used to write terminal output into file. Output, generated from any command, on terminal can be transferred into existing file. If file does not exist, automatically new file will be created. Following are some redirectors.
 ## Single Redirector (>): Single redirector replace existing data in the file with newly redirected data. It overwrites the contents of existing file.
 ## Double Redirector (>>): Double redirector keeps existing data and newly redirected data will be added at the end of the file. It appends redirected data in existing file.
-
-
-
+- Syntax
+```
+# <command_to_generate_output> [> or >>] <new/existing_file>
+```
+- Example:-
+```
+[root@server0 ~]# echo “Hello World” > ~/abc.txt
+[root@server0 ~]# cat ~/abc.txt
+Hello World
+[root@server0 ~]# echo “I am Shubham” >> ~/abc.txt
+[root@server0 ~]# cat ~/abc.txt
+Hello World
+I am Shubham
+```
+---
+## Redirectors with cat command:-
+- Example:-
+- Display content of existing file
+```
+[root@server0 ~]# cat /root/anaconda-ks.cfg
+```
+- Create a new file and provide writing into it.
+```
+[root@server0 ~]# cat > /root/Desktop/flower.txt
+Lotus, rose, tulip, lily.                      -> Press [ctrl+d] to save file
+[root@server0 ~]# cat /root/Desktop/flower.txt
+Lotus, rose, tulip, lily.
+```
 
 
 
