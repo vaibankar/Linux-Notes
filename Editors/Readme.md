@@ -28,7 +28,28 @@
 3. Delete current word = dw
 4. Delete n no. of words from current word = <n>dw
 5. Copy current line = yy
-6. 
+6. Copy n no. of lines from current line = <n>yy
+7. Copy current word = yw
+8. Copy n no. of words from current word = <n>yw
+9. Cut current line and enter in insert mode = cc
+10. Cut n no. of lines and enter in insert mode = <n>cc
+11. Cut current word and enter in insert mode = cw
+12. Cut n no. of words from current word and enter in insert mode = <n>cw
+13. Paste = p
+14. Remove current character and enter in insert mode = s
+15. Remove current line and enter in insert mode = S
+16. Undo = u
+17. Redo = Ctrl+r
+18. Move cursor to the top of screen = H
+19. Move cursor to the middle of screen = M
+20. Move cursor to the bottom of screen = L
+21. Move cursor at the end of file = G
+22. Move cursor at the beginning = gg
+23. Move cursor at nth line = <n>gg
+24. Search particular word/string/character = /<word>
+25. Show next search result = n
+26. Show previous search result = N
+
 
 
 
