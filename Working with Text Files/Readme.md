@@ -90,7 +90,9 @@ mkdir <option> <path/directory_name>
 ```
 ## COPY: - Copy operation use to copy files and directories in Linux, from one location to another. It will copy contents of one file to another. If destination file is not exist in given location then automatically new file will be generated.
 - Syntax:
-   - cp <option> <source> <destination>
+ ```
+ cp <option> <source> <destination>
+```
 -Options:
   - -f : forcefully
   - -v : Verbose/View
