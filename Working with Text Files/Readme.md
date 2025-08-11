@@ -50,7 +50,8 @@ mkdir <option> <path/directory_name>
 ---
 # File Operations:-
 ## READ:- Read operation can be performed to view content of the file. There are five commands which we can use for read operation.
-- cat:- cat command is used to get data of file as output on the terminal. Reading out large file leads to navigate in terminal, which require separate scrolling device (mouse). So, cat command is very useful in reading smaller files with few lines of data in command line. Example,
+- cat:- cat command is used to get data of file as output on the terminal. Reading out large file leads to navigate in terminal, which require separate scrolling      device (mouse). So, cat command is very useful in reading smaller files with few lines of data in command line.
+ Example,
 
 
 
