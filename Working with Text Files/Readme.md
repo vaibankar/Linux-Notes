@@ -27,7 +27,7 @@ Syntax:
 [root@server0 /]# touch /root/file{1..100}.txt
 ```
 ---
-## #mkdir :- mkdir command creates directories. Creating multiple directories are also possible using mkdir command
+## mkdir :- mkdir command creates directories. Creating multiple directories are also possible using mkdir command
 Syntax: 
 ```
 mkdir <option> <path/directory_name>
