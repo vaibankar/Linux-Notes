@@ -44,9 +44,9 @@ centos shubham                                          -> Home directories
 centos rpc shubham                                      -> Mail Accounts
 ```
 ## Skeleton files
-      - .bash_logout: if this file is missing, user will unable to logout from the system.
-      - .bash_profile: If this file is missing, home directory will not be assigned to the new user.
-      - .bashrc: If this file is missing, user will unable to login to the system.
+   - .bash_logout: if this file is missing, user will unable to logout from the system.
+   - .bash_profile: If this file is missing, home directory will not be assigned to the new user.
+   - .bashrc: If this file is missing, user will unable to login to the system.
 
 
 
