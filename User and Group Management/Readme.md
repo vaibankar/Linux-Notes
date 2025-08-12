@@ -62,7 +62,20 @@ centos rpc shubham                                      -> Mail Accounts
 ````
 ### Example:-
 - Switching from root user to local user (shubham)
-
+```
+[root@ip-172-31-19-5 centos]# su - shubham
+Last login: Wed Nov 6 11:53:05 UTC 2019 on pts/0
+[shubham@ip-172-31-19-5 ~]$
+```
+---
+- Switching from local user (shubham) to any other user (centos)
+```
+[shubham@ip-172-31-19-5 ~]$ su - centos
+Password:
+Last login: Wed Nov 6 11:52:19 UTC 2019 from 49.36.29.134 on pts/0
+[centos@ip-172-31-19-5 ~]$
+```
+-- (Note: Switching user using ‘su’ command will open new sub shell with different user login. But, previous user remains logged in. You have to logout user manually.)
 
 
 
