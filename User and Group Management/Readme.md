@@ -145,6 +145,17 @@ omO6nBwwiPyqPt4hAij5OxiQIQ5.:18206:0:99999:7:::
 ```
 ---
 ①:②:③:④:⑤:⑥:⑦:⑧:⑨
+1. Username: This is a unique name for the user. User names are important to match a user to his password. On Linux, there can be no spaces in the user name.
+2. Encrypted password: This field contains all that is needed to store the password in a secure way.
+3. Days since Jan 1, 1970, that the password was last changed: Many things on Linux refer to this date, which on Linux is considered the beginning of days.
+4. Days before password may be changed: This is minimum age of password. That means user cannot change password, before the mentioned days, after immediately changing the password. Typically this field is set to the value 0.
+5. Days after which password must be changed: This field contains the maximal validity period of passwords or maximum age of password. User must have to change their password after mentioned days. By default it is set to 99999 days.
+6. Days before password is to expire that user is warned: This field is used to warn a user when a forced password change is upcoming. By default it is set to 7 days.
+7. Days after password expires that account is disabled: Use this field to enforce a password change. After password expiry, users can no longer log in.
+8. Days since Jan 1, 1970, that account is disabled: An administrator can set this field to disable an account. This is typically a better approach than removing an account, as all associated properties and files of the account will be kept, but it can be used no longer to authenticate on your server.
+9. For future use: This is reserved field for future use.
+---
+
 
 
 
