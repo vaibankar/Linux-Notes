@@ -336,30 +336,200 @@ TATA:x:2005:
 6. Home Directory Home Directory: This is the initial directory where the user is placed after logging in, also referred to as the home directory. If the user account is used by a person, this is where the person would store his personal files and programs.
 7. Login shell: This is the program that is started after the user has successfully connected to a server. For most users this will be / bin/bash, the default Linux shell. For system user accounts, it will typically be a shell like /sbin/nologin. The /sbin/nologin command is a specific command that silently denies access to users.
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Adding user with customized setting
+- Syntax
+```
+# useradd <options> <parameters> <username>
+```
+- Options
+   - -u = User id
+   - -g = Primary group
+   - -c = Comment
+   - -d = Home directory
+   - -s = Login shell
+   - -G = Secondary group
+   - -r = System user
+   - -e = Account expiry date
+   - -o = Non unique
+---
+- Example
+- Create user with customized user id
+```
+[root@ip-172-31-19-5 ~]# useradd -u 2211 amit
+[root@ip-172-31-19-5 ~]# tail -1 /etc/passwd
+amit:x:2211:2211::/home/amit:/bin/bash
+```
+- Create user with comment
+```
+[root@ip-172-31-19-5 ~]# useradd -c "linux user" amit
+[root@ip-172-31-19-5 ~]# tail -1 /etc/passwd
+amit:x:2212:2212:linux user:/home/amit:/bin/bash
+```
+- Create user with customized home directory
+```
+[root@ip-172-31-19-5 ~]# useradd -d /project suresh
+[root@ip-172-31-19-5 ~]# tail -1 /etc/passwd
+suresh:x:2213:2213::/project:/bin/bash
+```
+- Create user with nologin shell
+```
+[root@ip-172-31-19-5 ~]# useradd -s /sbin/nologin mahesh
+[root@ip-172-31-19-5 ~]# tail -1 /etc/passwd
+mahesh:x:2214:2214::/home/mahesh:/sbin/nologin
+```
+- Create user with customized primary group
+```
+[root@ip-172-31-19-5 ~]# useradd -g IBM amit
+[root@ip-172-31-19-5 ~]# tail -1 /etc/passwd
+amit:x:2216:1003::/home/amit:/bin/bash
+```
+- Create user and assign secondary group
+```
+[root@ip-172-31-19-5 ~]# useradd -G IBM shubham
+[root@ip-172-31-19-5 ~]# tail -2 /etc/group
+IBM:x:1003:shubham
+shubham:x:2216:
+```
+- Add user along with its expiry date
+```
+[root@ip-172-31-19-5 ~]# useradd -e "10 dec 2019" suresh
+[root@ip-172-31-19-5 ~]# chage -l suresh
+Last password change                                  : Nov 08, 2019
+Password expires                                      : never
+Password inactive                                     : never
+Account expires                                       : Dec 10, 2019
+Minimum number of days between password change        : 0
+Maximum number of days between password change        : 99999
+Number of days of warning before password expires     : 7
+```
+---
+- Create user with multiple customize options
+```
+[root@ip-172-31-19-5 ~]# useradd -u 6001 -g TCS -G IBM -c "admin account" -d
+/admin -s /bin/bash -e "31 dec 2030" shubham
+[root@ip-172-31-19-5 ~]# tail -1 /etc/passwd
+shubham:x:6001:1006:admin account:/admin:/bin/bash
+[root@ip-172-31-19-5 ~]# tail -2 /etc/group
+IBM:x:1003:shubham
+TCS:x:1006:
+[root@ip-172-31-19-5 ~]# chage -l shubham
+Last password change                                   : Nov 08, 2019
+Password expires                                       : never
+Password inactive                                      : never
+Account expires                                        : Dec 31, 2030
+Minimum number of days between password change         : 0
+Maximum number of days between password change         : 99999
+Number of days of warning before password expires      : 7
+```
+---
+### Modify user with customized setting
+- #usermod – ‘usermod’ command is use to modify existing user’s setting.
+- Syntax
+```
+# usermod <option> <parameters> <username>
+```
+- Options
+   - -u = user id
+   - -g = primary group
+   - -c = Comment
+   - -d = home directory
+   - -s = login shell
+   - -G = secondary group
+   - -l = login name
+   - -L = lock user password
+   - -U = unlock user password
+   - -m = modify directories
+ ---
+ -Example
+ -Change user id
+```
+[root@ip-172-31-37-64 ~]# #usermod -u 7766 sumit
+[root@ip-172-31-37-64 ~]# tail -1 /etc/passwd
+sumit:x:6021:6021::/home/sumit:/bin/bash
+```
+---
+- Change comment
+```
+[root@ip-172-31-37-64 ~]# usermod -c “windows” sumit
+[root@ip-172-31-37-64 ~]# tail -1 /etc/passwd
+sumit:x:6021:6021:windows:/home/sumit:/bin/bash
+```
+---
+- Change home directory
+```
+[root@ip-172-31-37-64 ~]# usermod -m -d /home/namit sumit
+[root@ip-172-31-37-64 ~]# tail -1 /etc/passwd
+sumit:x:6021:6021:windows:/home/namit:/bin/bash
+```
+---
+- Change login shell
+```
+[root@ip-172-31-37-64 ~]# usermod -s /bin/bash sumit
+[root@ip-172-31-37-64 ~]# tail -1 /etc/passwd
+sumit:x:6021:6021:windows:/home/namit:/bin/bash
+```
+---
+- Assign secondary or supplementary group
+```
+[root@ip-172-31-37-64 ~]#usermod -G TCS suresh
+[root@ip-172-31-37-64 ~]# tail -1 /etc/group
+TCS:x:6023:suresh
+```
+---
+- Change user login name
+```
+[root@ip-172-31-37-64 ~]# usermod -l sammuel ritesh
+[root@ip-172-31-37-64 ~]# tail -1 /etc/passwd
+sammuel:x:2214:2214::/home/ritesh:/bin/bash
+```
+---
+- Change expiry date of account
+```
+[root@ip-172-31-37-64 ~]# usermod -e '14 dec 2018' ritesh
+[root@ip-172-31-37-64 ~]# chage -l ritesh
+Last password change                                   : May 25, 2019
+Password expires                                       : never
+Password inactive                                      : never
+Account expires                                        : Dec 14, 2018
+Minimum number of days between password change         : 0
+Maximum number of days between password change         : 99999
+Number of days of warning before password expires      : 7
+```
+---
+- Lock and Unlock User Password
+```
+[root@ip-172-31-19-5 ~]# tail -1 /etc/shadow
+amit:$6$lblryj7X$jDt1EWzSANqKVrW/KS4VSEBU/GTFFgUmfCNZJxBjV4kTUJWgirNaNKsHIg79Y
+gUIPXO.VT50vQuNnu4ik64ZM/:18209:0:99999:7:::
+[root@ip-172-31-19-5 ~]#
+[root@ip-172-31-19-5 ~]# usermod -L amit  Lock Password
+[root@ip-172-31-19-5 ~]# tail -1 /etc/shadow
+amit:!$6$lblryj7X$jDt1EWzSANqKVrW/KS4VSEBU/GTFFgUmfCNZJxBjV4kTUJWgirNaNKsHIg79
+YgUIPXO.VT50vQuNnu4ik64ZM/:18209:0:99999:7:::
+[root@ip-172-31-19-5 ~]#
+[root@ip-172-31-19-5 ~]# usermod -U amit  Unlock Password
+[root@ip-172-31-19-5 ~]# tail -1 /etc/shadow
+amit:$6$lblryj7X$jDt1EWzSANqKVrW/KS4VSEBU/GTFFgUmfCNZJxBjV4kTUJWgirNaNKsHIg79Y
+gUIPXO.VT50vQuNnu4ik64ZM/:18209:0:99999:7:::
+```
+---
+## Remove user from system
+### #userdel – ‘userdel’ command is used to remove or delete user account from system.
+- Syntax
+```
+# userdel <username>
+```
+- Example
+- Delete user account
+```
+[root@ip-172-31-19-5 ~]# userdel amit
+```
+---
+- Delete user account along with its home directory and mail account
+```
+[root@ip-172-31-19-5 ~]# userdel -r shubham
+```
+---
 
 
 
