@@ -75,7 +75,7 @@ Password:
 Last login: Wed Nov 6 11:52:19 UTC 2019 from 49.36.29.134 on pts/0
 [centos@ip-172-31-19-5 ~]$
 ```
--- (Note: Switching user using ‘su’ command will open new sub shell with different user login. But, previous user remains logged in. You have to logout user manually.)
+  - (Note: Switching user using ‘su’ command will open new sub shell with different user login. But, previous user remains logged in. You have to logout user manually.)
 
 
 
