@@ -102,11 +102,49 @@ BAD PASSWORD: The password is shorter than 8 characters
 Retype new password:
 passwd: all authentication tokens updated successfully.
 ```
-
-
-
-
-
+---
+- Changing local user’s password by root user’s account
+```
+[root@ip-172-31-19-5 centos]# passwd shubham
+Changing password for user shubham.
+New password:
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password:
+passwd: all authentication tokens updated successfully.
+```
+---
+- Changing current user’s password (local user changing its own password)
+```
+[shubham@ip-172-31-19-5 ~]$ passwd
+Changing password for user shubham.
+Changing password for shubham.
+(current) UNIX password:
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+```
+---
+- Changing other user’s password by local user’s account, (it generates error because only root user has privilege to change other user’s password)
+```
+[shubham@ip-172-31-19-5 ~]$ passwd centos
+passwd: Only root can specify a user name.
+```
+---
+- Password are stored in /etc/shadow file in encrypted format
+```
+[root@ip-172-31-19-5 ~]# tail -1 /etc/shadow
+shubham:$6$S59rUkc4$iIusUTs6TPb2ueLMty3/2kvShejrTVctesfLYyUwTa78kDQQ/O/f954Euy
+omO6nBwwiPyqPt4hAij5OxiQIQ5.:18206:0:99999:7:::
+```
+---
+- /etc/shadow file: /etc/shadow file stores password and password policies of all users. It contains nine fields and each field is separated by colon. Below is the summary of these fields
+```
+[root@ip-172-31-19-5 ~]# tail -1 /etc/shadow
+shubham:$6$S59rUkc4$iIusUTs6TPb2ueLMty3/2kvShejrTVctesfLYyUwTa78kDQQ/O/f954Euy
+omO6nBwwiPyqPt4hAij5OxiQIQ5.:18206:0:99999:7:::
+```
+---
+①:②:③:④:⑤:⑥:⑦:⑧:⑨
 
 
 
