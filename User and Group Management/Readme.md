@@ -289,10 +289,31 @@ IBM:x:1005:
 TCS:x:2005:
 ```
 ---
-
-
-
-
+- Modify existing group with customize setting
+- Syntax
+```
+# groupmod <option> <parameter> <groupname>
+```
+- Options
+  - -g = Group id
+  - -n = Group Name
+  - -o = Non unique
+- Example
+- Change group id of existing group
+```
+[root@ip-172-31-37-64 ~]#groupmod -g 5903 IBM
+[root@ip-172-31-37-64 ~]# tail -1 /etc/group
+IBM:x:5903:
+```
+---
+- Changing group name of existing group
+```
+[root@ip-172-31-37-64 ~]# groupmod -n TATA TCS
+[root@ip-172-31-37-64 ~]# tail -2 /etc/group
+TATA:x:2005:
+```
+---
+## User Administration/Management
 
 
 
