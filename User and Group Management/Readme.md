@@ -55,7 +55,7 @@ centos rpc shubham                                      -> Mail Accounts
 ```
 ---
 ### Switching between users
-    su: The ‘su’ command is use to switch user. It allows user to open a sub shell with different logged in user. Switching user from root to other local user will not require any password. But, switching from        local user to any other user will require password of that user for authentication and login.
+-  su: The ‘su’ command is use to switch user. It allows user to open a sub shell with different logged in user. Switching user from root to other local user will not require any password. But, switching from        local user to any other user will require password of that user for authentication and login.
 ## Syntax,
 ```
 # su - <user_name>
