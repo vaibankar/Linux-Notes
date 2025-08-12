@@ -440,7 +440,7 @@ Number of days of warning before password expires      : 7
    - -U = unlock user password
    - -m = modify directories
  ---
- -Example
+ - Example
  -Change user id
 ```
 [root@ip-172-31-37-64 ~]# #usermod -u 7766 sumit
