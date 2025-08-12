@@ -314,8 +314,23 @@ TATA:x:2005:
 ```
 ---
 ## User Administration/Management
+- useradd – `useradd` command use to create new user account.
+- Syntax
+```
+# useradd <username>
+```
+- Example
+```
+[root@ip-172-31-19-5 ~]# useradd shubham
+```
+---
+- /etc/passwd file: This file stores user profile information. It contain 7 fields as follows
 
-
+①:②:③:④:⑤:⑥:⑦
+1. User login name: This is a unique name for the user. User names are important to match a user to his password, which is stored separately in /etc/shadow. On Linux, there can be no spaces in the user name.
+2. Password link from shadow file: since /etc/passdw file is readable by all user, for security purpose, the password is stored in /etc/shadow file.
+3. User id (UID): Each user has a unique user ID (UID). This is a numeric ID. It is the UID that really determines what a user can do. When permissions are set for a user, the UID is stored in the file metadata (and not the user name). UID 0 is reserved for root. The lower UIDs (typically up to 999) are used for system accounts, and the higher UIDs (from 1000 on by default), are reserved for people that need to connect directory to the server. [Note:
+/etc/login.defs contain default setting for user creation.]
 
 
 
