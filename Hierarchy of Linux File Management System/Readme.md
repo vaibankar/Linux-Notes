@@ -147,6 +147,63 @@ The root directory is the top-level directory in Linux. All other directories ar
 
 - Contains user programs and data (larger, secondary hierarchy).
 
+/usr
+├── bin/ # Non-essential user commands
+├── sbin/ # Non-essential system binaries
+├── lib/ # Libraries for /usr/bin and /usr/sbin
+├── local/ # Locally installed software
+└── share/ # Architecture-independent data
+
+
+---
+
+## 📁 `/var` - Variable Files
+
+- Contains files that change frequently, like logs, spool files, etc.
+- Examples: `/var/log/`, `/var/mail/`, `/var/tmp/`
+
+---
+
+## ✅ Summary
+
+| Directory | Purpose |
+|----------|---------|
+| `/` | Root of the file system |
+| `/bin` | Essential command binaries |
+| `/sbin` | System administration binaries |
+| `/etc` | Configuration files |
+| `/home` | User home directories |
+| `/var` | Variable data (logs, mail) |
+| `/tmp` | Temporary files |
+| `/usr` | Secondary hierarchy of user applications |
+| `/lib` | Essential shared libraries |
+| `/boot` | Boot files |
+| `/proc` | Virtual filesystem for processes |
+| `/sys` | Kernel-related information |
+| `/dev` | Device files |
+| `/media` | Mounted media |
+| `/mnt` | Temporary mounts |
+| `/opt` | Optional application software |
+| `/srv` | Service data |
+| `/run` | Runtime data |
+| `/root` | Root user’s home |
+
+---
+
+## 📘 References
+
+- [Linux Filesystem Hierarchy Standard (FHS)](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
+- `man hier`
+
+---
+
+## ✍️ Author
+
+- Created by: *Your Name*
+- Date: August 2025
+
+
+
 
 
 
