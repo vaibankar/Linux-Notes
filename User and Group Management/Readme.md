@@ -249,9 +249,77 @@ Maximum number of days between password change        : 45
 Number of days of warning before password expires     : 0
 ```
 ---
-### Group Administration/Management
+## Group Administration/Management
   - Linux users can be a member of two different kinds of groups. First, there is the primary group. Every user must be a member of a primary group and there is only one primary group. When creating files, the primary group becomes group owner of these files.
 Users can also access all files their primary group has access to. The user’s primary group membership is defined in /etc/passwd; the group itself is stored in the /etc/group configuration file. Besides the mandatory primary group, users can be a member of one or more secondary groups as well. Secondary groups are important to get access to files. If the group a user is a member of has access to specific files, the user will get access to these files also.
+
+### groupadd – ‘groupadd’ command is use to add secondary or supplementary group in system. Group information are stored in /etc/group file.
+- Syntax
+```
+# groupadd <groupname>
+```
+- Example
+```
+[root@ip-172-31-37-64 ~]# groupadd IBM
+[root@ip-172-31-37-64 ~]# tail -1 /etc/group
+IBM:x:1005:
+```
+---
+### /etc/group file: This file contain all group’s information. The file has four fields and each field is separated by colon (:). Following are fields of shadow file
+①:②:③:④
+1. Group name: As is suggested by the name of the field, this contains the name of the group.
+2. Redirected group password: A feature that is hardly used anymore. A group password can be used by users that want to join the group on a temporary basis, so that access to files the group has access to is allowed.
+3. Group id (GID): A unique numeric group identification number.
+4. List of members: Here you find the names of users that are a member of this group as a secondary group. Note that it does not show users that are a member of this group as their primary group.
+---
+- Adding group with customize setting
+- Syntax
+```
+# groupadd <option> <parameter> <groupname>
+```
+- Options
+  - -g = Group id
+  - -o = Non unique
+  - -f = Forcefully
+
+- Example
+```
+[root@ip-172-31-37-64 ~]# groupadd -g 2005 TCS
+[root@ip-172-31-37-64 ~]# tail -1 /etc/group
+TCS:x:2005:
+```
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
