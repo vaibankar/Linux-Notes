@@ -1,0 +1,3 @@
+### A user is a person who utilizes a computer or network service. Linux is said to be secure because one user cannot access files of other user without its permission.
+- There are three types of user.
+1. 1. Super user: Super users are those users who has all privileges of Linux system. On all Linux systems, by default there is the user root, also known as the super user. This account is used for managing Linux. Root, for instance, can create other user accounts on the system. For some tasks, root privileges are required. Some examples are installing software, managing users, and creating partitions on disk devices.
