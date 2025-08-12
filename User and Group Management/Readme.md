@@ -36,8 +36,17 @@ shubham:x:1002:
 shubham:!::
 ```
 ---
-
-
+### Home directory and Mail account of new user
+```
+[root@ip-172-31-19-5 ~]# ls /home
+centos shubham                                          -> Home directories
+[root@ip-172-31-19-5 ~]# ls /var/spool/mail/
+centos rpc shubham                                      -> Mail Accounts
+```
+## Skeleton files
+      - .bash_logout: if this file is missing, user will unable to logout from the system.
+      - .bash_profile: If this file is missing, home directory will not be assigned to the new user.
+      - .bashrc: If this file is missing, user will unable to login to the system.
 
 
 
