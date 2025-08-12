@@ -249,6 +249,9 @@ Maximum number of days between password change        : 45
 Number of days of warning before password expires     : 0
 ```
 ---
+### Group Administration/Management
+  - Linux users can be a member of two different kinds of groups. First, there is the primary group. Every user must be a member of a primary group and there is only one primary group. When creating files, the primary group becomes group owner of these files.
+Users can also access all files their primary group has access to. The user’s primary group membership is defined in /etc/passwd; the group itself is stored in the /etc/group configuration file. Besides the mandatory primary group, users can be a member of one or more secondary groups as well. Secondary groups are important to get access to files. If the group a user is a member of has access to specific files, the user will get access to these files also.
 
 
 
