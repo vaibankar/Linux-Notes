@@ -530,6 +530,119 @@ gUIPXO.VT50vQuNnu4ik64ZM/:18209:0:99999:7:::
 [root@ip-172-31-19-5 ~]# userdel -r shubham
 ```
 ---
+### /etc/gshadow file: This file use to store password of group. It also stores admin and member list of group. It contain four fields
+①:②:③:④
+1. Group name
+2. Encrypted Password
+3. Admin of group
+4. Member list
+---
+### #gpasswd – ‘gpasswd’ command is use to give password to group. It also can be used to add members and assign admin to the group.
+- Syntax
+```
+# gpasswd <option> <parameter> <groupname>
+```
+- Options
+   - -a = Add members in group
+   - -M = Set list of members in group
+   - -A = Assign user as group admin
+---
+- Example
+- Assign or change group password
+```
+[root@ip-172-31-19-5 ~]# gpasswd TCS
+Changing the password for group TCS
+New Password:
+Re-enter new password:
+[root@ip-172-31-19-5 ~]# tail -1 /etc/gshadow
+TCS:$6$b4a1sbtiZDy$arjapZjNWW2u.EE2D49ZI2k8VtT7WNZ3zRNkmg0ByFIrJrXbjMZe8fQ0U0R
+QfTG/RrXOKAukFC5ganx0k00MO1::
+```
+---
+- Add existing user in group using gpasswd command
+```
+[root@ip-172-31-19-5 ~]# gpasswd -a mahesh TCS
+Adding user mahesh to group TCS
+[root@ip-172-31-19-5 ~]# tail -1 /etc/group
+TCS:x:2218:mahesh
+```
+---
+- Add existing user in group using usermod command
+```
+[root@ip-172-31-19-5 ~]# usermod -G TCS suresh
+[root@ip-172-31-19-5 ~]# tail -1 /etc/group
+TCS:x:2218:mahesh,suresh
+```
+---
+- Add new user in group during creating its account
+```
+[root@ip-172-31-19-5 ~]# useradd -G TCS amit
+[root@ip-172-31-19-5 ~]# tail -2 /etc/group
+TCS:x:2218:mahesh,suresh,amit
+amit:x:2219:
+```
+---
+- Set list of members in group, (old list of members will replace with new list.)
+```
+[root@ip-172-31-19-5 ~]# gpasswd -M atul,shubham TCS
+[root@ip-172-31-19-5 ~]# tail -2 /etc/group
+TCS:x:2218:atul,shubham
+amit:x:2219:
+```
+---
+- Assign user as admin of group
+```
+[root@ip-172-31-19-5 ~]# gpasswd -A amit TCS
+[root@ip-172-31-19-5 ~]# tail -2 /etc/gshadow
+TCS:$6$b4a1sbtiZDy$arjapZjNWW2u.EE2D49ZI2k8VtT7WNZ3zRNkmg0ByFIrJrXbjMZe8fQ0U0R
+QfTG/RrXOKAukFC5ganx0k00MO1:amit:atul,shubham
+amit:!::
+```
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
