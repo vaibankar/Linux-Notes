@@ -162,7 +162,7 @@ omO6nBwwiPyqPt4hAij5OxiQIQ5.:18206:0:99999:7:::
 # chage <option> <parameter> <username>
 ```
 - Options
-      - -l = list / view password policy.
+  - -l = list / view password policy.
 
 
 
