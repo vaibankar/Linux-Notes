@@ -76,8 +76,15 @@ Last login: Wed Nov 6 11:52:19 UTC 2019 from 49.36.29.134 on pts/0
 [centos@ip-172-31-19-5 ~]$
 ```
   - (Note: Switching user using ‘su’ command will open new sub shell with different user login. But, previous user remains logged in. You have to logout user manually.)
+---
+### Password Management
+- passwd: Password is the secret phrase that can be used to login to the system. ‘passwd’ command will be used to assign or change password of any user by root user. Whenever, password assigned to the user, it will stored in /etc/shadow file in encrypted format. Only root user can change password of any user, but local users can change their own password. Password should follow some rules such as,
 
-
+    - Password must be 8 character long
+    - It should not contain user name
+    - It cannot accept old password
+    - Any dictionary name is not allowed
+    - Password should not be too simplistic
 
 
 
