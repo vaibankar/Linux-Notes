@@ -163,14 +163,92 @@ omO6nBwwiPyqPt4hAij5OxiQIQ5.:18206:0:99999:7:::
 ```
 - Options
   - -l = list / view password policy.
-
-
-
-
-
-
-
-
+  - -m = min. days between password change.
+  - -M = maximum days between password change.
+  - -W = number of days of warning.
+  - -I = number of inactivation days.
+  - -E = Expiry date of user account.
+  - -d = force to change password.
+---
+- Example
+- View password policies
+```
+[root@ip-172-31-37-64 ]# chage -l amit
+Last password change                                 : May 25, 2019
+Password expires                                     : never
+Password inactive                                    : never
+Account expires                                      : never
+Minimum number of days between password change       : 0
+Maximum number of days between password change       : 99999
+Number of days of warning before password expires    : 7
+```
+---
+- Change minimum age
+```
+[root@ip-172-31-37-64 ]# chage -m 30 amit
+[amit@ip-172-31-37-64 ~]$ chage -l amit
+Last password change                                  : May 25, 2019
+Password expires                                      : never
+Password inactive                                     : never
+Account expires                                       : never
+Minimum number of days between password change        : 30
+Maximum number of days between password change        : 99999
+Number of days of warning before password expires     : 7
+```
+---
+- Change maximum age
+```
+[root@ip-172-31-37-64 ]# chage -M 45 amit
+[amit@ip-172-31-37-64 ~]$ chage -l amit
+Last password change                                 : May 25, 2019
+Password expires                                     : Jul 09, 2019
+Password inactive                                    : never
+Account expires                                      : never
+Minimum number of days between password change       : 30
+Maximum number of days between password change       : 45
+Number of days of warning before password expires    : 7
+```
+---
+- Change warning days
+```
+[root@ip-172-31-37-64 ]# chage -W 0 amit
+[amit@ip-172-31-37-64 ~]$ chage -l amit
+Last password change                                  : May 25, 2019
+Password expires                                      : Jul 09, 2019
+Password inactive                                     : never
+Account expires                                       : never
+Minimum number of days between password change        : 30
+Maximum number of days between password change        : 45
+Number of days of warning before password expires     : 0
+```
+---
+- Change expiry date of user account
+```
+[root@ip-172-31-37-64 ]# chage -E "20 OCT 2018" amit
+[root@ip-172-31-37-64 ]# su - amit
+[amit@ip-172-31-37-64 ~]$ chage -l amit
+Last password change                                   : May 25, 2019
+Password expires                                       : Jul 09, 2019
+Password inactive                                      : never
+Account expires                                        : Oct 20, 2018
+Minimum number of days between password change         : 30
+Maximum number of days between password change         : 45
+Number of days of warning before password expires      : 0
+```
+---
+- Change password immediately
+```
+[root@ip-172-31-37-64 amit]# chage -d 0 amit
+[amit@ip-172-31-37-64 ~]$ chage -l amit
+Last password change                                  : password must be changed
+Password expires                                      : password must be changed
+Password inactive                                     : password must be changed
+Account expires                                       : Oct 20, 2018
+Minimum number of days between password change        : 30
+Maximum number of days between password change        : 45
+Number of days of warning before password expires     : 0
+```
+---
 
 
 
