@@ -86,8 +86,18 @@ Last login: Wed Nov 6 11:52:19 UTC 2019 from 49.36.29.134 on pts/0
     - Any dictionary name is not allowed
     - Password should not be too simplistic
 
-
-
+ - Syntax  #passwd                                       -> change current user’s password
+           #passwd <user_name>                           -> assign or change other user’s password by root user
+### Example
+- Changing root user’s password
+```
+[root@ip-172-31-19-5 ~]# passwd
+Changing password for user root.
+New password:
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password:
+passwd: all authentication tokens updated successfully.
+```
 
 
 
