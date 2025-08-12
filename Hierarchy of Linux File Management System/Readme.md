@@ -188,19 +188,6 @@ The root directory is the top-level directory in Linux. All other directories ar
 | `/run` | Runtime data |
 | `/root` | Root user’s home |
 
----
-
-## 📘 References
-
-- [Linux Filesystem Hierarchy Standard (FHS)](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
-- `man hier`
-
----
-
-## ✍️ Author
-
-- Created by: *Your Name*
-- Date: August 2025
 
 
 
