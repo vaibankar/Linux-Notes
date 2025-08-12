@@ -155,8 +155,14 @@ omO6nBwwiPyqPt4hAij5OxiQIQ5.:18206:0:99999:7:::
 8. Days since Jan 1, 1970, that account is disabled: An administrator can set this field to disable an account. This is typically a better approach than removing an account, as all associated properties and files of the account will be kept, but it can be used no longer to authenticate on your server.
 9. For future use: This is reserved field for future use.
 ---
-
-
+- View and change password policy
+  - #chage – ‘chage’ (change age) command use to view or modify password policy of user.
+- Syntax
+```
+# chage <option> <parameter> <username>
+```
+- Options
+      - -l = list / view password policy.
 
 
 
