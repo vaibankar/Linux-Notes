@@ -329,8 +329,14 @@ TATA:x:2005:
 ①:②:③:④:⑤:⑥:⑦
 1. User login name: This is a unique name for the user. User names are important to match a user to his password, which is stored separately in /etc/shadow. On Linux, there can be no spaces in the user name.
 2. Password link from shadow file: since /etc/passdw file is readable by all user, for security purpose, the password is stored in /etc/shadow file.
-3. User id (UID): Each user has a unique user ID (UID). This is a numeric ID. It is the UID that really determines what a user can do. When permissions are set for a user, the UID is stored in the file metadata (and not the user name). UID 0 is reserved for root. The lower UIDs (typically up to 999) are used for system accounts, and the higher UIDs (from 1000 on by default), are reserved for people that need to connect directory to the server. [Note:
-/etc/login.defs contain default setting for user creation.]
+3. User id (UID): Each user has a unique user ID (UID). This is a numeric ID. It is the UID that really determines what a user can do. When permissions are set for a user, the UID is stored in the file metadata (and not the user name). UID 0 is reserved for root. The lower UIDs (typically up to 999) are used for system accounts, and the higher UIDs (from 1000 on by default), are reserved for people that need to connect directory to the server.
+-  [Note:-/etc/login.defs contain default setting for user creation.]
+4. Primary group’s id (GID): On Linux, each user is a member of at least one group. This group is referred to as the primary
+5. Comment field: The Comment field, as you can guess, is used to add comments for user accounts. This field is optional, but it can be used to describe what a user account is created for.
+6. Home Directory Home Directory: This is the initial directory where the user is placed after logging in, also referred to as the home directory. If the user account is used by a person, this is where the person would store his personal files and programs.
+7. Login shell: This is the program that is started after the user has successfully connected to a server. For most users this will be / bin/bash, the default Linux shell. For system user accounts, it will typically be a shell like /sbin/nologin. The /sbin/nologin command is a specific command that silently denies access to users.
+---
+
 
 
 
