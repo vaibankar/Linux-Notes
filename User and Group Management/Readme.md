@@ -47,8 +47,21 @@ centos rpc shubham                                      -> Mail Accounts
    - .bash_logout: if this file is missing, user will unable to logout from the system.
    - .bash_profile: If this file is missing, home directory will not be assigned to the new user.
    - .bashrc: If this file is missing, user will unable to login to the system.
-
-
+```
+[root@ip-172-31-19-5 ~]# ls -a /etc/skel                                   -> skeleton files
+. .. .bash_logout .bash_profile .bashrc
+[root@ip-172-31-19-5 ~]# ls -a /home/shubham                               -> skeleton that copied in
+. .. .bash_logout .bash_profile .bashrc                                    home directory
+```
+---
+### Switching between users
+    su: The ‘su’ command is use to switch user. It allows user to open a sub shell with different logged in user. Switching user from root to other local user will not require any password. But, switching from        local user to any other user will require password of that user for authentication and login.
+## Syntax,
+```
+# su - <user_name>
+````
+### Example:-
+- Switching from root user to local user (shubham)
 
 
 
