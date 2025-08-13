@@ -15,6 +15,7 @@ dr-xr-x---. 3 root root 181 Nov 5 10:46 /root
 
 <img width="631" height="71" alt="image" src="https://github.com/user-attachments/assets/57bb1180-d913-4811-b205-ba4f31a31f03" />
 ---
+
 1. File type.
 2. Owner Permissions.
 3. Group Permissions.
@@ -26,7 +27,7 @@ dr-xr-x---. 3 root root 181 Nov 5 10:46 /root
 9. Creation Date and Time.
 10. File/Directory Name.
 ---
--- File Types in Linux: There are seven types of file available mentioned as below
+-File Types in Linux: There are seven types of file available mentioned as below
 
 
 
