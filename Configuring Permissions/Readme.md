@@ -196,11 +196,45 @@ If you ignore the leading zero for the moment, the umask value masks what is con
 ---
 - Calculating Permission with Umask
 <img width="857" height="127" alt="image" src="https://github.com/user-attachments/assets/41a880d9-bf94-4085-ae25-0666ee627768" />
+
 ---
+- Umask for root user and standard user
+```
+[root@cloudblitz ~]# umask                               -> default umask for root user
+0022
+[student@cloudblitz ~]$ umask                            -> umask for standard user
+0002
+```
+---
+- Changing umask value temporary
+```
+[root@cloudblitz ~]# umask 000
+[root@cloudblitz ~]# mkdir demo
+[root@cloudblitz ~]# ll
+drwxrwxrwx. 2 root root 6 May 29 12:34 demo
+```
+---
+- Changing umask value permanent
 
+```
+[root@cloudblitz ~]# vim /etc/profile
+59 if [ $UID -gt 199 ] && [ "`/usr/bin/id -gn`" = "`/usr/bin/id -un`" ]; then
+60 umask 002 #change value for standard user line 60
+61 else
+62 umask 000 #change the value for root line 62
+63 fi
+:wq
+[root@cloudblitz ~]# source /etc/profile
+[root@cloudblitz ~]# umask
+0000
+```
+---
+### Special Permission:
+  - Special Permission: We have three types of special permission, i.e. suid, sgid, and stickey bit.
 
+<img width="847" height="307" alt="image" src="https://github.com/user-attachments/assets/6114bb21-8f5d-4af8-91ed-d242e55092ed" />
 
-
+---
 
 
 
