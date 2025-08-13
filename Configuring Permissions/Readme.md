@@ -189,7 +189,14 @@ drwxr-xr-x. 2 root root 6 May 25 07:10 /abhi/
   - When a user creates a file as a regular user, it’s given permission rw- rw-r-- (664) by default. A directory is given the permission rwxrwxr-x (775). For the root user, file and directory permission are rw-r--r-- (644) and rwxr-xr-x (755), respectively. These default values are determined by the value of umask. Type umask to see what your umask value is.
 If you ignore the leading zero for the moment, the umask value masks what is considered to be fully opened permissions for a file 666 or a directory 777. The umask value of 002 results in permission for a directory of 775 (rwxrwxr-x). That same umask results in a file permission of 644 (rw-rw-r--).
 
+- Default Permission for root and standard user
 
+<img width="857" height="77" alt="image" src="https://github.com/user-attachments/assets/bd51e81e-95d7-4b87-b349-88a833b8bc0d" />
+
+---
+- Calculating Permission with Umask
+<img width="857" height="127" alt="image" src="https://github.com/user-attachments/assets/41a880d9-bf94-4085-ae25-0666ee627768" />
+---
 
 
 
