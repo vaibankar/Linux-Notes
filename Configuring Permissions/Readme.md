@@ -14,3 +14,94 @@ dr-xr-x---. 3 root root 181 Nov 5 10:46 /root
 - Above example display contents from directory along with its security details. It contains ten fields as mentioned below
 
 <img width="631" height="71" alt="image" src="https://github.com/user-attachments/assets/57bb1180-d913-4811-b205-ba4f31a31f03" />
+---
+1. File type.
+2. Owner Permissions.
+3. Group Permissions.
+4. Other User Permission.
+5. Link Count.
+6. Owner of file/directory.
+7. Group Owner of File or Directory.
+8. File Size.
+9. Creation Date and Time.
+10. File/Directory Name.
+---
+-- File Types in Linux: There are seven types of file available mentioned as below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
