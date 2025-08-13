@@ -49,12 +49,65 @@ There are two types of symbolic link
    - b. Soft Link
 - Below is the difference between hard and soft links
 
+<img width="856" height="407" alt="image" src="https://github.com/user-attachments/assets/2d76f5ab-e295-4f56-9fe0-b8166e725813" />
 
+---
+- Example
+- Create Hardlink and softlink
+```
+[root@ip-172-31-19-5 ~]# ln /root/anaconda-ks.cfg /root/Documents/hardlink
+[root@ip-172-31-19-5 ~]# ln –s /root/anaconda-ks.cfg /root/Documents/softlink
+[root@ip-172-31-19-5 ~]# ll /root/Documents
+Total 4
+-rw-------. 2 root root 817 Nov 18 23:06 hardlink
+lrwxrwxrwx. 1 root root 21 Dec 4 16:57 softlink -> /root/anaconda-ks.cfg
+```
+---
+### User and group ownership:
+  - Basically, by default, user who creates the file/directory is the owner and his primary group acquires group ownerships of that file/directory. User owner and group owner of file will be shown in 6th and 7th field as shown in the figure. “chown” command is use to change owner and group where as using “chgrp” we can change group ownership.
+- Syntax
+---
+# chown <user_name>:<group_name> <file/dir_name> 
+# chgrp <group_name> <file/dir_name>
+---
+- Example
+- Change User Ownership
 
+```
+[root@cloudblitz ~]# touch samplefile.txt
+[root@cloudblitz ~]# ll
+-rw-r--r--. 1 root root 0 May 29 08:56 samplefile.txt
+[root@cloudblitz ~]# chown chetan samplefile.txt
+[root@cloudblitz ~]# ll
+-rw-r--r--. 1 chetan root 0 May 29 08:57 samplefile.txt
+```
+---
+- Change Group Ownership
+```
+[root@cloudblitz ~]# chgrp nagpur samplefile.txt
+[root@cloudblitz ~]# ll
+-rw-r--r--. 1 chetan nagpur 0 May 29 08:57 samplefile.txt
+```
+---
+- Change user and group ownership using chown
+```
+[root@cloudblitz ~]# chown atul:TCS samplefile.txt
+[root@cloudblitz ~]# ll
+-rw-r--r--. 1 atul TCS  0 May 29 08:57 samplefile.txt
+```
+---
+### Managing Permissions
+  - Field 2nd, 3rd and 4th represents permissions for owner, group owner and other users. Each of that field contain three basic permissions which allow user to read, write, and executes files. The effect of these permissions differ when applied to file or directory. If applied to a file, the read permission gives user the right to open file for reading. Therefore, user can read it’s contain. “chmod” command is use to change these basic permissions.
 
+<img width="857" height="278" alt="image" src="https://github.com/user-attachments/assets/740b9cd3-5216-4772-9716-95fdcf41cabc" />
 
-
-
+---
+- Change permission using letters
+- Syntax
+---
+# chmod <u,g,o><+,-,=><r,w,x> <file_name>
+---
+---
 
 
 
