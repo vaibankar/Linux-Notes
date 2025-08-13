@@ -107,11 +107,32 @@ lrwxrwxrwx. 1 root root 21 Dec 4 16:57 softlink -> /root/anaconda-ks.cfg
 ---
 # chmod <u,g,o><+,-,=><r,w,x> <file_name>
 ---
+<img width="856" height="103" alt="image" src="https://github.com/user-attachments/assets/518ddc0a-f8aa-465b-a53b-c652d1ecb619" />
+
 ---
-
-
-
-
+- Example
+- Give write permission to group
+---
+[root@ip-172-31-41-212 ~]# mkdir /nagpur 
+[root@ip-172-31-41-212 ~]# chmod g+w /nagpur/ 
+[root@ip-172-31-41-212 ~]# ls -ld /nagpur/ 
+drwxrwxr-x. 2 root root 6 May 25 06:14 /nagpur/
+---
+---
+- Remove read and write permission for other users
+```
+[root@ip-172-31-41-212 ~]# chmod o-rx /nagpur/
+[root@ip-172-31-41-212 ~]# ls -ld /nagpur
+drwxrwx---. 2 root root 6 May 25 06:14 /nagpur
+```
+---
+- Assign read only permission for group and other users
+```
+[root@ip-172-31-41-212 ~]# chmod go=r /nagpur/
+[root@ip-172-31-41-212 ~]# ls -ld /nagpur
+drwxr--r--. 2 root root 6 May 25 06:14 /nagpur
+```
+--- 
 
 
 
