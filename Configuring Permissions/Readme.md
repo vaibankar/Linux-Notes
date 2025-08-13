@@ -133,15 +133,61 @@ drwxrwx---. 2 root root 6 May 25 06:14 /nagpur
 drwxr--r--. 2 root root 6 May 25 06:14 /nagpur
 ```
 --- 
+- Give execute permission to owner of file
+```
+[root@cloudblitz ~]# touch samplefile3.txt
+[root@cloudblitz ~]# chmod u+rwx samplefile3.txt
+[root@cloudblitz ~]# ll
+-rwxr--r--. 1 root root 0 May 29 09:29 samplefile3.txt
+```
+---
+- Remove read permission for group and assign read and write permission to other users
+```
+[root@ip-172-31-41-212 ~]# chmod g-r,o=rw samplefile3.txt
+[root@ip-172-31-41-212 ~]# ls –l samplefile3.txt
+-rwx---rw-. 1 root root 0 May 29 09:29 samplefile3.txt
+```
+---
+- Change permission using octal number
+- Syntax
+```
+# chmod <permission_in_numbers> <file_name>
+```
+---
 
+<img width="847" height="240" alt="image" src="https://github.com/user-attachments/assets/504910d9-979c-4256-8bea-71dc771a0ba6" />
 
-
-
-
-
-
-
-
+---
+- Example
+- Changing permission using octal number
+```
+[root@ip-172-31-41-212 ~]# mkdir /abhi
+[root@ip-172-31-41-212 ~]# chmod 421 /abhi/
+[root@ip-172-31-41-212 ~]# ls -ld /abhi/
+dr---w---x. 2 root root 6 May 25 07:10 /abhi/
+```
+---
+```
+[root@ip-172-31-41-212 ~]# chmod 732 /abhi/
+[root@ip-172-31-41-212 ~]# ls -ld /abhi/
+drwx-wx-w-. 2 root root 6 May 25 07:10 /abhi/
+```
+---
+```
+[root@ip-172-31-41-212 ~]# chmod 644 /abhi/
+[root@ip-172-31-41-212 ~]# ls -ld /abhi/
+drw-r--r--. 2 root root 6 May 25 07:10 /abhi/
+```
+---
+```
+[root@ip-172-31-41-212 ~]# chmod 755 /abhi/
+[root@ip-172-31-41-212 ~]# ls -ld /abhi/
+drwxr-xr-x. 2 root root 6 May 25 07:10 /abhi/
+```
+---
+### Default Permission:
+  - When a user creates a file as a regular user, it’s given permission rw- rw-r-- (664) by default. A directory is given the permission rwxrwxr-x (775). For the root user, file and directory permission are rw-r--r-- (644) and rwxr-xr-x (755), respectively. These default values are determined by the value of umask. Type umask to see what your umask value is.
+If you ignore the leading zero for the moment, the umask value masks what is considered to be fully opened permissions for a file 666 or a directory 777. The umask value of 002 results in permission for a directory of 775 (rwxrwxr-x). That same umask results in a file permission of 644 (rw-rw-r--).
 
 
 
