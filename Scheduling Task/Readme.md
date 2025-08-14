@@ -57,7 +57,8 @@ MAILTO=root
 # | .------------- hour (0 - 23)
 # | | .---------- day of month (1 - 31)
 # | | | .------- month (1 - 12) OR jan,feb,mar,apr ...
-# | | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,... # | | | | |
+# | | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,...
+# | | | | |
 # * * * * * user-name command to be executed
 ```
 ---
