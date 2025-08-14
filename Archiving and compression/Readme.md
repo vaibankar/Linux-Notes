@@ -228,31 +228,94 @@ Tulip
 - `wc` – wc command gives the number of lines, words and characters in the data. Options
 
   - -l = Show Line Count
-  - 
+  - -w = Display word count
+  - -m = Show character count
 
+- Example
+```
+[root@localhost ~]# wc /flower.txt
+9 9 57 /flower.txt
+```
+---
+- `grep` – grep is used to search a particular information from a text file.
+- Options
 
+  - -i = Ignore uppercase vs. lowercase.
+  - -v = Invert match.
+  - -c = Output count of matching lines only.
+  - -n = Precede each matching line with a line number.
 
+- Example
+```
+[root@localhost ~]# grep “Da” /flower.txt
+#Daisy
+#Daisy
+[root@localhost ~]# grep –c “Da” /flower.txt
+2
+[root@localhost ~]# grep -v “Da” /flower.txt
+#Rose
+#Lotus
+#Lotus
+#Lily
+#Jasmine
+#Marigold
+#Tulip
+[root@localhost ~]# grep -c -v “Da” /flower.txt
+7
+```
+---
+- Following are some search utilities
 
+- `locate` – The locate command is used to find files by their filename. The locate command is lightning fast because there is a background process that runs on your system that continuously finds new files and stores them in a database. When you use the locate command, it then searches that database for the filename instead of searching your filesystem while you wait.
+- Options
 
+   - -i = Ignore uppercase vs. lowercase.
+   - -c = Output count of matching lines only.
+   - -l = Limiting search result
+---
+- Example
+```
+[root@localhost ~]# locate flower
+/flower.txt
+/home/shubham/Pictures/flower-123.jpg
+```
+--- 
+- `find` – The find Command is one of the most important and frequently used command-line utility in Linux operating systems. Find command is used to search and locate the list of files and directories based on conditions you specify for files that match the arguments. Find can be used in a variety of conditions like you can find files by permissions, users, groups, file type, date, size, and other possible criteria.
+- Syntax:
+```
+#find <search_path> <options> <required-parameters>
+```
+---
+- Options
+<img width="781" height="578" alt="image" src="https://github.com/user-attachments/assets/8cdb7fd6-ea99-434b-b456-a9f22e0db964" />
 
+---
+- Example
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+[root@server1 ~]# find /etc -name passwd
+/etc/passwd
+[root@server1 ~]# find /home/ -perm 644
+/home/ec2-user/.bash_logout
+[root@server1 ~]# find / -size +100M
+/usr/lib/locale/locale-archive
+[root@server1 ~]# find / -user cbz
+/home/cbz
+[root@server1 ~]# find / -uid 1005
+/home/cbz
+[root@server1 ~]# find / -group admin
+/root/demo.txt
+[root@server1 ~]# find / -gid 1006
+/root/demo.txt
+[root@server1 ~]# ll -l /boot/grub/menu.lst
+[root@server1 ~]# find /boot/ -amin -1
+[root@server1 ~]# vi /etc/hosts
+[root@server1 ~]# find /etc -mmin -1
+/etc/hosts
+[root@server1 home]# find / -name authorized_keys -exec cp -rv {} /home \;
+[root@server1 home]# find / -type f -name passwd -exec rm -rf {} \;
+```
+---
 
 
 
