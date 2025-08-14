@@ -120,10 +120,21 @@ SYSLOGD_OPTIONS variable is included in the systemd configuration file that star
 Theoretically, you could change startup parameters in this file, as well, but that is not
 recommended
 
+   - **Understanding rsyslog.conf Sections**
 
+  - The rsyslog.conf file is used to specify what should be logged and where it should be
+logged. To do this, you’ll find different sections in the configuration file:
 
+  - #### MODULES ####: rsyslogd is modular. Modules are included to enhance the
+supported features in rsyslogd.
 
+  - #### GLOBAL DIRECTIVES ####: This section is used to specify global parameters,
+such as the location where auxiliary files are written or the default timestamp format.
 
+  - #### RULES ####: This is the most important part of the rsyslog.conf file. It
+contains the rules that specify what information should be logged to which destination. 
+
+**Understanding Facilities, Priorities, and Log Destinations** 
 
 
 
