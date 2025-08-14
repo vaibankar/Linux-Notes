@@ -167,19 +167,53 @@ file is opened. The logrotate utility is started periodically through the crond 
 rotating log files. The default settings for log rotation are kept in the file `/etc/logrotate.conf`.
 Logs can be rotated with customized settings that will kept in `/etc/logrotate.d/` directory.
 
+- Sample content for logrotate setting
 
+```
+[root@localhost ~]# cat /etc/logrotate.d/yum
+/var/log/yum.log {
+missingok
+notifempty
+size 30k
+yearly
+create 0600 root root
+}
+```
+---
+- Logs can be rotated forcefully using `logrotate` command followed by configuration file for
+logrotate. The logrotate command reads out configuration file and can perform
 
+### Working with journald
 
+- The systemd-journald service stores log messages in the journal, a binary file that is stored in the file
+/run/log/journal. This file can be examined using the `journalctl` command.
 
+- Understanding journalctl
 
+  - `journalctl`, you’ll see the content of the journal since your server last started, starting at
+the beginning of the journal. The content is shown in less, so you can use common less
+commands to walk through the file.
 
-
-
-
-
-
-
-
+ - `journalctl --no-pager`, this shows the contents of the journal without using a pager.
+ - `journalctl –f`, this opens the live view mode of journalctl, which allows you to see new
+messages scrolling by in real time. Use Ctrl+C to interrupt.
+ - Type `journalctl` and press the Tab key twice. This shows specific options that can be used
+for filtering. Ex, `journalctl _UID=0` 
+ - `journalctl -n 20`, It displays the last 20 lines of the journal (just like tail -n 20).
+ -  `journalctl -p err`, this will shows errors only. You can use other priorities with –p option.
+ -  If you want to view journal messages that have been written in a specific time period, you can
+use the `--since` and `--until` options. Both options take the time parameter in the format
+`YYYY-MM-DD` `hh:mm:ss`. Also, you can use yesterday, today, and tomorrow as parameters.
+Ex, `journalctl --since yesterday`, to show all messages that have been written since
+yesterday.
+ - `journalctl` allows you to combine different options, as well. So, if you want to show all
+messages with a priority err that have been written since yesterday, use journalctl --since
+yesterday -p err .
+ - If you need as much detail as possible, use `journalctl -o verbose`, this shows different
+options that are used when writing to the journal.
+ - `journalctl _SYSTEMD_ UNIT=sshd.service` to show more information about the sshd
+systemd unit.
+---
 
 
 
