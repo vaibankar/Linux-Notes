@@ -39,12 +39,23 @@ job 3 at Fri Jan 31 14:30:00 2020
 ---
 # crontab
 
-    - Crontab is similar as that of window task scheduler in windows. In Linux, we schedule jobs using `crontab`. Crontab job scheduling technique is very useful for creating backup, scanning system, performing jobs with daily, weekly, monthly basis, etc. A daemon called crond runs in the background and check its configuration every minute to examine configuration files in order to execute commands or shell scripts specified in the crontab if the time matches with specified time. Crontab can executes job repeatedly in specified time interval.
+   - Crontab is similar as that of window task scheduler in windows. In Linux, we schedule jobs using `crontab`. Crontab job scheduling technique is very useful for creating backup, scanning system, performing jobs with daily, weekly, monthly basis, etc. A daemon called crond runs in the background and check its configuration every minute to examine configuration files in order to execute commands or shell scripts specified in the crontab if the time matches with specified time. Crontab can executes job repeatedly in specified time interval.
 
-    - Crond executes cron jobs on a regular basis if they comply with the format defined in the `/etc/crontab` file. Crontables for users are located in the `/var/spool/cron` directory. A cron table includes six fields separated by space or tab characters. The first five fields specify the times to run the command, and the sixth field is the absolute pathname to the command to be executed. These fields are mentioned in /etc/crontab file.
+   - Crond executes cron jobs on a regular basis if they comply with the format defined in the `/etc/crontab` file. Crontables for users are located in the `/var/spool/cron` directory. A cron table includes six fields separated by space or tab characters. The first five fields specify the times to run the command, and the sixth field is the absolute pathname to the command to be executed. These fields are mentioned in /etc/crontab file.
 
 - /etc/crontab file
 
+```
+# cat /etc/crontab SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root
+# For details see man 4 crontabs # Example of job definition:
+# .---------------- minute (0 - 59)
+# | .------------- hour (0 - 23)
+# | | .---------- day of month (1 - 31)
+# | | | .------- month (1 - 12) OR jan,feb,mar,apr ...
+# | | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,... # | | | | |
+# * * * * * user-name command to be executed
+```
+---
 
 
 
