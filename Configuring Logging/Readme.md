@@ -1,9 +1,9 @@
 # Understanding System Logging
  - Most services used on a Linux server write information to log files. This information can be written to different destinations, and there are multiple solutions to find the relevant information in system logs. No less than three different approaches can be used by services to write log information:
     
-    - ###direct write###: Some services write logging information directly to the log files, even some important services such as the Apache web server and the Samba file server.
-    - rsyslogd: rsyslogd is the enhancement of syslogd, a service that takes care of managing centralized log files. Syslogd has been around for a long time.
-    - journald: With the introduction of systemd to the journald log service, systemd-journald service has been introduced. This service is tightly integrated with systemd, which allows administrators to read detailed information from the journal while monitoring service status using the systemctl status command.
+    - `direct write`: Some services write logging information directly to the log files, even some important services such as the Apache web server and the Samba file server.
+    - `rsyslogd`: rsyslogd is the enhancement of syslogd, a service that takes care of managing centralized log files. Syslogd has been around for a long time.
+    - `journald`: With the introduction of systemd to the journald log service, systemd-journald service has been introduced. This service is tightly integrated with systemd, which allows administrators to read detailed information from the journal while monitoring service status using the systemctl status command.
 
 ---
 # Understanding the Role of rsyslogd and journald
@@ -15,7 +15,7 @@
 
 - In the current state of Red Hat Enterprise Linux 7, journald is not a replacement for rsyslog; it is just another way of logging information.
 
-- Using systemctl Status to Show Relevant Log Information
+- Using `systemctl` Status to Show Relevant Log Information
 
 ```
 [root@ip-172-31-24-16 ~]# systemctl status sshd
@@ -59,10 +59,10 @@ Jan 30 04:49:14 ip-172-31-24-16 dhclient[3012]: XMT: Solicit on eth0, interval
 114820ms.
 ```
 ---
-- Date and time: Every log message starts with a timestamp. For filtering purposes.
-- Host: The host the message originated from. This is relevant because rsyslogd can be configured to handle remote logging as well.
-- Service or process name: The name of the service or process that generated the message.
-- Message content: The content of the message, which contains the exact message that has been logged.
+- `Date and time`: Every log message starts with a timestamp. For filtering purposes.
+- `Host`: The host the message originated from. This is relevant because rsyslogd can be configured to handle remote logging as well.
+- `Service or process name`: The name of the service or process that generated the message.
+- `Message content`: The content of the message, which contains the exact message that has been logged.
 ---
 
 - Live Log File Monitoring
@@ -107,7 +107,7 @@ Jan 30 06:11:14 ip-172-31-32-167 ec2-user: Danger
 
 - To make sure that the information that needs to be logged is written to the location where you want to find it, you can configure the rsyslogd service through the /etc/rsyslog.conf file.
 
-  - **Understanding rsyslogd Configuration Files**
+  ### **Understanding rsyslogd Configuration Files**
    
       - Like many other services on RHEL 7, the configuration for rsyslogd is not defined in just one configuration file. The /etc/rsyslogd.conf file is the central location where rsyslogd is
 configured. From this file, the content of the directory /etc/rsyslog.d is included. This directory can be populated by installing RPM packages on a server. When looking for specific log
