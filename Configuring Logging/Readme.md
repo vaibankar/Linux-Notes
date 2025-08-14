@@ -108,8 +108,12 @@ Jan 30 06:11:14 ip-172-31-32-167 ec2-user: Danger
 - To make sure that the information that needs to be logged is written to the location where you want to find it, you can configure the rsyslogd service through the /etc/rsyslog.conf file.
 
   - **Understanding rsyslogd Configuration Files**
-
-
+   
+      - Like many other services on RHEL 7, the configuration for rsyslogd is not defined in
+just one configuration file. The /etc/rsyslogd.conf file is the central location where rsyslogd is
+configured. From this file, the content of the directory /etc/rsyslog.d is included. This directory
+can be populated by installing RPM packages on a server. When looking for specific log
+configuration, make sure to always consider the contents of this directory also. 
 
 
 
