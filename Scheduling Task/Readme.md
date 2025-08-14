@@ -76,14 +76,35 @@ MAILTO=root
   - -l –u = List crontable of specific user
   - -r –u = Remove crontable of specific user
 ---
+- Example
+- Suppose, we have to schedule following jobs
 
+  1. Create a file in /root/Downloads dir with name FLOWER.txt at 10.30 pm on 15 Aug.
+  2. Display “Welcome to Cloudblitz” massage on terminal at midnight of every Saturday.
+  3. Display “HELLO” massage on terminal after every hour on 10th of Jan, Feb, and March
 
+```
+[root@localhost ~]# crontab –e                                        -> editing current user’s crontab
+30 22 15 aug * /bin/touch /root/Downloads/FLOWER.txt
+0 0 * * sat /bin/echo “Welcome to Irise”
+0 * 10 jan,feb,mar * /bin/echo “HELLO”
+```
+---
+-  Listing crontable
+```
+[root@localhost ~]# crontab –l
+30 22 15 aug * /bin/touch /root/Downloads/FLOWER.txt
+0 0 * * sat /bin/echo “Welcome to Irise”
+0 * 10 jan,feb,mar * /bin/echo “HELLO”
+```
+---
+- Scheduling a job for Natasha user, creating file in Natasha’s home directory at 10 am on Jan 31st.
 
-
-
-
-
-
+```
+[root@localhost ~]# crontab –e –u natasha
+0 10 31 jan * /bin/touch ~/demo
+```
+---
 
 
 
