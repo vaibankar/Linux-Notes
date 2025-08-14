@@ -109,14 +109,16 @@ Jan 30 06:11:14 ip-172-31-32-167 ec2-user: Danger
 
   - **Understanding rsyslogd Configuration Files**
    
-      - Like many other services on RHEL 7, the configuration for rsyslogd is not defined in
-just one configuration file. The /etc/rsyslogd.conf file is the central location where rsyslogd is
-configured. From this file, the content of the directory /etc/rsyslog.d is included. This directory
-can be populated by installing RPM packages on a server. When looking for specific log
-configuration, make sure to always consider the contents of this directory also. 
-
-
-
+      - Like many other services on RHEL 7, the configuration for rsyslogd is not defined in just one configuration file. The /etc/rsyslogd.conf file is the central location where rsyslogd is
+configured. From this file, the content of the directory /etc/rsyslog.d is included. This directory can be populated by installing RPM packages on a server. When looking for specific log
+configuration, make sure to always consider the contents of this directory also.
+ 
+      - If specific options need to be passed to the rsyslogd service on startup, you can do
+this by using the /etc/sysconfig/rsyslog file. This file by default contains one line, which reads
+SYSLOGD_OPTIONS. On this line, you can specify rsyslogd startup parameters. The
+SYSLOGD_OPTIONS variable is included in the systemd configuration file that starts rsyslogd.
+Theoretically, you could change startup parameters in this file, as well, but that is not
+recommended
 
 
 
