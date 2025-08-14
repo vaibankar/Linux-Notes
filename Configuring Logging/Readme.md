@@ -1,7 +1,7 @@
 # Understanding System Logging
  - Most services used on a Linux server write information to log files. This information can be written to different destinations, and there are multiple solutions to find the relevant information in system logs. No less than three different approaches can be used by services to write log information:
     
-    - direct write: Some services write logging information directly to the log files, even some important services such as the Apache web server and the Samba file server.
+    - ###direct write###: Some services write logging information directly to the log files, even some important services such as the Apache web server and the Samba file server.
     - rsyslogd: rsyslogd is the enhancement of syslogd, a service that takes care of managing centralized log files. Syslogd has been around for a long time.
     - journald: With the introduction of systemd to the journald log service, systemd-journald service has been introduced. This service is tightly integrated with systemd, which allows administrators to read detailed information from the journal while monitoring service status using the systemctl status command.
 
