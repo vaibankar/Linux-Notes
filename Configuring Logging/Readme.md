@@ -214,9 +214,48 @@ options that are used when writing to the journal.
  - `journalctl _SYSTEMD_ UNIT=sshd.service` to show more information about the sshd
 systemd unit.
 ---
+### Preserving the systemd Journal
 
+- By default, the journal is stored in the file /run/log/journal. The entire /run directory is used for current
+process status information only, which means that the journal is cleared when the system reboots.
 
+- Setting journald Parameters Through /etc/systemd/journald.conf
 
+```
+[Journal]
+#Storage=auto
+#Compress=yes
+#Seal=yes
+#SplitMode=login
+#SyncIntervalSec=5m
+#RateLimitInterval=30s
+#RateLimitBurst=1000
+#SystemMaxUse=
+#SystemKeepFree=
+#SystemMaxFileSize=
+#RuntimeMaxUse=
+#RuntimeKeepFree=
+#RuntimeMaxFileSize=
+#MaxRetentionSec=
+#MaxFileSec=1month
+#ForwardToSyslog=yes
+#ForwardToKMsg=no
+#ForwardToConsole=no
+#TTYPath=/dev/console
+#MaxLevelStore=debug
+#MaxLevelSyslog=debug
+#MaxLevelKMsg=notice
+#MaxLevelConsole=info
+```
+---
+### Making the journald Journal Permanent
+
+  - STEP 1: Open a root shell and type mkdir /var/log/journal.
+  - STEP2: Before journald can write the journal to this directory, you have to set ownership. Type `chown root:systemd-journal /var/log/journal` , followed by `chmod 2755 /var/log/journal` .
+  - STEP 3: Next, you can either reboot your system (restarting the systemd-journald service is not enough) or use the `killall -USR1 systemd-journald` command.
+  - STEP 4: The systemd journal is now persistent across reboots. If you want to see the log messages since last reboot, use `journalctl -b` .
+
+---
 
 
 
