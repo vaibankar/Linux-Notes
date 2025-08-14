@@ -143,12 +143,29 @@ facilities, priorities, and destinations:
 list of facilities, which cannot be extended. This is because of backward compatibility with the
 legacy syslog service.
 
+  - a priority is used to define the severity of the message that needs to be logged.
+When specifying a priority, by default all messages with that priority and all higher priorities
+are logged.
+
+  - a destination defines where the message should be written to. Typical destinations
+are files, but rsyslog modules can be used as a destination as well, to allow further processing
+through an rsyslogd module. 
+
+- We can see example of RULES section in rsyslog file, i.e. `/etc/rsyslog.conf`.
+
+- Following are some rsyslog priorities
 
 
+<img width="856" height="435" alt="image" src="https://github.com/user-attachments/assets/aa6aed8d-746a-4925-aa1a-2cdb7db35e14" />
 
+---
+### Rotating Log Files
 
-
-
+- To prevent syslog messages from filling up your system completely, the log messages can be rotated.
+That means that when a certain threshold has been reached, the old log file is closed and a new log
+file is opened. The logrotate utility is started periodically through the crond service to take care of
+rotating log files. The default settings for log rotation are kept in the file `/etc/logrotate.conf`.
+Logs can be rotated with customized settings that will kept in `/etc/logrotate.d/` directory.
 
 
 
