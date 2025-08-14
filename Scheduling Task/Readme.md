@@ -46,8 +46,13 @@ job 3 at Fri Jan 31 14:30:00 2020
 - /etc/crontab file
 
 ```
-# cat /etc/crontab SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root
+# cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
 # For details see man 4 crontabs # Example of job definition:
+
 # .---------------- minute (0 - 59)
 # | .------------- hour (0 - 23)
 # | | .---------- day of month (1 - 31)
@@ -56,10 +61,21 @@ job 3 at Fri Jan 31 14:30:00 2020
 # * * * * * user-name command to be executed
 ```
 ---
+- Syntax
+```
+# crontab <option>
+```
+---
+- Options
 
-
-
-
+  - -e = Edit cron table
+  - -l = List cron table
+  - -r = Remove crontable
+  - -u = Specify user
+  - -e –u = Edit crontable for specific user
+  - -l –u = List crontable of specific user
+  - -r –u = Remove crontable of specific user
+---
 
 
 
