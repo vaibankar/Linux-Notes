@@ -154,7 +154,7 @@ etc.tar.xz
 ### Search and Filter utility in Linux
 
 - Search utilities are used to search files from the system where as filter utilities filters the output.
-- <u>Following are some filter tools that can we use</u>
+- <u> Following are some filter tools that can we use </u>
 
 
 
