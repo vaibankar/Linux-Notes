@@ -156,7 +156,7 @@ etc.tar.xz
 - Search utilities are used to search files from the system where as filter utilities filters the output.
 - Following are some filter tools that can we use
 
-  - `cat` – displays the text from file as output
+- `cat` – displays the text from file as output
 ```
 [root@localhost ~]# cat /flower.txt
 Rose
@@ -168,18 +168,67 @@ Marigold
 Tulip
 ```
 ---
-   - `head` – display top few lines (defaults ten lines) of output
+- `head` – display top few lines (defaults ten lines) of output
+```
+[root@localhost ~]# head –n 3 /flower.txt
+Rose
+Lotus
+Lotus
+```
+---
+- `tail` – displays bottom few lines (defaults ten lines) of output
+```
+[root@localhost ~]# tail –n 3 /flower.txt
+Jasmine
+Marigold
+Tulip
+```
+---
+- `sort` – Sorts the lines alphabetically by default but there are many options available to modify the sorting mechanism
+```
+[root@localhost ~]# sort /flower.txt
+Daisy
+Daisy
+Jasmine
+Lily
+Lotus
+Lotus
+Marigold
+Rose
+Tulip
+```
+---
+- `uniq` – Removes duplicate lines. uniq has a limitation that it can only remove continuous duplicate lines.
+```
+[root@localhost ~]# uniq /flower.txt
+Rose
+Lotus
+Lily
+Daisy
+Jasmine
+Marigold
+Tulip
+```
+---
+- `sed` – sed stands for stream editor. It allows us to apply search and replace operation on our data effectively. sed is quite an advanced filter and all its options can be seen on its man page.
+```
+[root@localhost ~]# sed –i s/^/#/ /flower.txt
+[root@localhost ~]# cat /flower.txt
+#Rose
+#Lotus
+#Lotus
+#Lily
+#Daisy
+#Daisy
+#Jasmine
+#Marigold
+#Tulip
+```
+---
+- `wc` – wc command gives the number of lines, words and characters in the data. Options
 
-
-
-
-
-
-
-
-
-
-
+  - - l = Show Line Count
+  - 
 
 
 
