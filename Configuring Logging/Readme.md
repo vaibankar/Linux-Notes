@@ -120,7 +120,7 @@ this by using the /etc/sysconfig/rsyslog file. This file by default contains one
 Theoretically, you could change startup parameters in this file, as well, but that is not
 recommended
 
-    ### **Understanding rsyslog.conf Sections**
+  ### **Understanding rsyslog.conf Sections**
 
   - The rsyslog.conf file is used to specify what should be logged and where it should be
 logged. To do this, you’ll find different sections in the configuration file:
@@ -136,7 +136,12 @@ contains the rules that specify what information should be logged to which desti
 
   ### **Understanding Facilities, Priorities, and Log Destinations** 
 
+  - To specify what information should be logged to which destination, rsyslogd uses
+facilities, priorities, and destinations:
 
+   - a facility specifies a category of information that is logged. rsyslogd uses a fixed
+list of facilities, which cannot be extended. This is because of backward compatibility with the
+legacy syslog service.
 
 
 
