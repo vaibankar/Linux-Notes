@@ -155,8 +155,20 @@ etc.tar.xz
 
 - Search utilities are used to search files from the system where as filter utilities filters the output.
 - Following are some filter tools that can we use
-  - `cat` – displays the text from file as output
 
+  - `cat` – displays the text from file as output
+```
+[root@localhost ~]# cat /flower.txt
+Rose
+Lotus
+Lily
+Daisy
+Jasmine
+Marigold
+Tulip
+```
+---
+   - `head` – display top few lines (defaults ten lines) of output
 
 
 
