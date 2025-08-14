@@ -227,7 +227,7 @@ Tulip
 ---
 - `wc` – wc command gives the number of lines, words and characters in the data. Options
 
-  - - l = Show Line Count
+  - -l = Show Line Count
   - 
 
 
