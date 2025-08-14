@@ -76,7 +76,13 @@ F S UID   PID   PPID C PRI NI   ADDR SZ WCHAN TTY TIME CMD
 4 S 0     2061  2054 0 80   0   - 29065 wait pts/0 00:00:00 bash
 0 S 0     2261  2061 0 70  -10  - 26973 hrtime pts/0 00:00:00 sleep
 ```
+---
+`Note`= TIP: Do not set process priority to -20; it risks blocking other processes from getting served.
 
+---
+###m Sending Signals to Processes with kill, killall, and pkill
+- The Linux kernel allows many signals to be sent to processes. Use man 7 signals for a complete overview of all the available signals. Three of these signals work for all processes:
+   - The signal SIGTERM (15) is used to ask a process to stop.
 
 
 
