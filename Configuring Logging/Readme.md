@@ -37,25 +37,77 @@ Jan 30 04:38:47 ip-172-31-24-16.us-east-2.compute.internal systemd[1]: Started
 ---
 ## Reading Log Files
 
+- Apart from the messages that are written by journald to the journal, and which can be read using the
+`journalctl` command, on a Linux system you’ll also find different log files in the directory /var/log.
 
 
+<img width="857" height="496" alt="image" src="https://github.com/user-attachments/assets/78fbdcff-4051-4124-b8f2-ee0b9c397b77" />
 
+---
+## Understanding Log File Contents
 
+- Example, (message logs)
+```
+[root@ip-172-31-24-16 ~]# tail -5 /var/log/messages
+Jan 30 04:43:47 ip-172-31-24-16 amazon-ssm-agent: </body>
+Jan 30 04:43:47 ip-172-31-24-16 amazon-ssm-agent: </html>
+Jan 30 04:45:08 ip-172-31-24-16 dhclient[3012]: XMT: Solicit on eth0, interval
+131720ms.
+Jan 30 04:47:19 ip-172-31-24-16 dhclient[3012]: XMT: Solicit on eth0, interval
+114430ms.
+Jan 30 04:49:14 ip-172-31-24-16 dhclient[3012]: XMT: Solicit on eth0, interval
+114820ms.
+```
+---
+- Date and time: Every log message starts with a timestamp. For filtering purposes.
+- Host: The host the message originated from. This is relevant because rsyslogd can be configured to handle remote logging as well.
+- Service or process name: The name of the service or process that generated the message.
+- Message content: The content of the message, which contains the exact message that has been logged.
+---
 
+- Live Log File Monitoring
+- Syntax
+```
+# tail –f <logfile>
+```
+---
+- Example
+```
+[root@ip-172-31-24-16 ~]# tail -f /var/log/messages
+Jan 30 04:47:19 ip-172-31-24-16 dhclient[3012]: XMT: Solicit on eth0, interval
+114430ms.
+Jan 30 04:49:14 ip-172-31-24-16 dhclient[3012]: XMT: Solicit on eth0, interval
+114820ms.
+Jan 30 04:50:01 ip-172-31-24-16 systemd: Created slice User Slice of root.
+Jan 30 04:50:01 ip-172-31-24-16 systemd: Starting User Slice of root.
+Jan 30 04:50:01 ip-172-31-24-16 systemd: Started Session 3 of user root.
+Jan 30 04:50:01 ip-172-31-24-16 systemd: Starting Session 3 of user root.
+Jan 30 04:50:01 ip-172-31-24-16 systemd: Removed slice User Slice of root.
+Jan 30 04:50:01 ip-172-31-24-16 systemd: Stopping User Slice of root.
+```
+---
+- Using logger
+- Most services write information to the log files all by themselves. The logger command enables users
+to write messages to rsyslog from the command line. User can write logs manually.
+- Syntax
+```
+# logger <option> <Message>
+```
+---
+- Example, (Writing log with priority option,)
+```
+[root@ip-172-31-24-16 ~]# logger –p local3.err “Danger”
+[root@ip-172-31-32-167 ~]# tail -3 /var/log/messages
+Jan 30 06:10:41 ip-172-31-32-167 systemd-logind: New session 5 of user ec2-user.
+Jan 30 06:10:41 ip-172-31-32-167 systemd: Starting Session 5 of user ec2-user.
+Jan 30 06:11:14 ip-172-31-32-167 ec2-user: Danger
+```
+---
+## Configuring rsyslogd
 
+- To make sure that the information that needs to be logged is written to the location where you want to find it, you can configure the rsyslogd service through the /etc/rsyslog.conf file.
 
-
-
-
-
-
-
-
-
-
-
-
-
+  - **Understanding rsyslogd Configuration Files**
 
 
 
