@@ -4,27 +4,46 @@
    - at – single time execution
    - crontab – periodic execution
    -  anacron – periodic execution
+---
+# at
+   - The at command uses atd service for executing jobs. At command queued the task
+into /var/spool/at and executes them when it is scheduled. After execution, tasks removed from the queue. After writing desired jobs, you can save jobs using shortcut key `“ctrl+d”`
+- Syntax
+```
+# at “<time> <date>”
+```
+---
+- Example
+- Scheduling at job
+```
+[root@localhost ~]# at “14:30 31 jan 2020”
+at> touch /root/file.txt
+at> mkdir /root/Practice
+at> <EOT>
+job 3 at Fri Jan 31 14:30:00 2020
+```
+---
+- Query for queued tasks
+```
+[root@localhost ~]# atq
+2   Thu Feb 14 10:00:00 2020 a root
+3   Fri Jan 31 14:30:00 2020 a root
+```
+---
+- Removing queued jobs
+```
+[root@localhost ~]# atrm 2
+[root@localhost ~]# atq
+3   Fri Jan 31 14:30:00 2020 a root
+```
+---
+# crontab
 
+    - Crontab is similar as that of window task scheduler in windows. In Linux, we schedule jobs using `crontab`. Crontab job scheduling technique is very useful for creating backup, scanning system, performing jobs with daily, weekly, monthly basis, etc. A daemon called crond runs in the background and check its configuration every minute to examine configuration files in order to execute commands or shell scripts specified in the crontab if the time matches with specified time. Crontab can executes job repeatedly in specified time interval.
 
+    - Crond executes cron jobs on a regular basis if they comply with the format defined in the `/etc/crontab` file. Crontables for users are located in the `/var/spool/cron` directory. A cron table includes six fields separated by space or tab characters. The first five fields specify the times to run the command, and the sixth field is the absolute pathname to the command to be executed. These fields are mentioned in /etc/crontab file.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- /etc/crontab file
 
 
 
